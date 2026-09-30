@@ -1,5 +1,23 @@
 # NetCRC — In-Switch 5G NR CRC Computation on a Barefoot Tofino
 
+> 📄 **If you use this code in research, please cite:**
+>
+> ```bibtex
+> @article{naji2025netcrc,
+>   title={Netcrc-nr: In-network 5g nr crc accelerator},
+>   author={Naji, Abdulbary and Wang, Xingfu and Liu, Ping and Hawbani, Ammar and Zhao, Liang and Xu, Xiaohua and Miao, Fuyou},
+>   journal={IEEE Transactions on Computers},
+>   volume={74},
+>   number={4},
+>   pages={1418--1430},
+>   year={2025},
+>   publisher={IEEE}
+> }
+> ```
+>
+> Naji *et al.*, "NetCRC-NR: In-Network 5G NR CRC Accelerator",
+> *IEEE Transactions on Computers*, vol. 74, no. 4, pp. 1418–1430, 2025.
+
 ## 1. What is NetCRC?
 
 `NetCRC` is a P4_14 / TNA (Tofino Native Architecture) data-plane program
@@ -24,6 +42,11 @@ software stack into the switch ASIC. Multiple input payload chunks are
 parsed, a table-driven CRC core computes the running CRC, and the result
 is attached back into the packet (as `crc24_hdr_t`, `crc16_hdr_t`,
 `crc11_hdr_t`, or `crc6_hdr_t`).
+
+This repository accompanies the paper **"NetCRC-NR: In-Network 5G NR CRC
+Accelerator"** by Naji *et al.*, IEEE Transactions on Computers, 2025
+(see citation block at the top). The paper describes the architecture,
+the table-driven CRC core, and the evaluation against a software DU.
 
 The companion project **NetModPlus** does the same trick for IQ
 constellation mapping — see `NetModPlus/README.md` for that variant.
